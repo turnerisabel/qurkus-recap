@@ -4,6 +4,7 @@ import at.htl.recap.entity.Vehicle;
 import io.agroal.api.AgroalDataSource;
 import io.quarkus.test.junit.QuarkusTest;
 import org.assertj.db.type.Table;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
@@ -21,6 +22,11 @@ class VehicleRepositoryTest {
     @Inject
     AgroalDataSource ds;
 
+    @BeforeEach
+    void setUp(){
+        vehicleRepository.deleteAll();
+    }
+
     @Test
     void t010_insertSimpleVehicle() {
 
@@ -34,7 +40,6 @@ class VehicleRepositoryTest {
                 .column("V_ID").value().isGreaterThanOrEqualTo(1000)
                 .column("V_BRAND").value().isEqualTo("Opel")
                 .column("V_Model").value().isEqualTo("Kapitän");
-
     }
 
 }
