@@ -29,6 +29,15 @@ public class Vehicle extends PanacheEntityBase {
     @Column(name = "V_CONSTRUCTION_YEAR")
     int constructionYear;
 
+    public Vehicle() {
+    }
+
+    public Vehicle(String brand, String model, int constructionYear) {
+        this.brand = brand;
+        this.model = model;
+        this.constructionYear = constructionYear;
+    }
+
     public int age(){
         return LocalDate.now().getYear() - constructionYear;
     }
