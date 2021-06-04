@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @SequenceGenerator(name = "vehicleSeq",
         sequenceName = "VEHICLE_SEQ",
         initialValue = 1000)
+
 public class Vehicle extends PanacheEntityBase {
 
     @Id
@@ -24,6 +25,7 @@ public class Vehicle extends PanacheEntityBase {
     String brand;
 
     @Column(name = "V_MODEL")
+    public
     String model;
 
     @Column(name = "V_CONSTRUCTION_YEAR")
@@ -44,6 +46,6 @@ public class Vehicle extends PanacheEntityBase {
 
     @Override
     public String toString() {
-        return String.format("%s %s", brand, model);
+        return String.format("%d: %s %s", id, brand, model);
     }
 }

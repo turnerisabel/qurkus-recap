@@ -31,7 +31,14 @@ class VehicleRepositoryTest {
     void t010_insertSimpleVehicle() {
 
         Vehicle vehicle = new Vehicle("Opel", "Kapitän", 1990);
-        vehicleRepository.persist(vehicle);
+        System.out.println(vehicle.toString());
+
+        vehicle = vehicleRepository.save(vehicle);
+        System.out.println(vehicle.toString());
+
+        vehicle.model = "Commodore";
+        vehicleRepository.save(vehicle);
+        System.out.println(vehicle.toString());
 
         Table table = new Table(ds, "V_VEHICLE");
         output(table).toConsole();
