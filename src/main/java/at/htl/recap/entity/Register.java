@@ -26,8 +26,8 @@ public class Register extends PanacheEntityBase {
     @Column(name = "R_LICENSE_NO")
     public String licenseNo;
 
-    @ManyToOne
-    @Column(name = "R_V_ID")
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "R_V_ID")
     public Vehicle vehicle;
 
     @Column(name = "R_REGISTER_DATE")
@@ -36,4 +36,13 @@ public class Register extends PanacheEntityBase {
     @Column(name = "R_SIGN_OFF_DATE")
     public LocalDate signOffDate;
 
+    public Register() {
+    }
+
+    public Register(String owner, String licenseNo, Vehicle vehicle) {
+        this.owner = owner;
+        this.licenseNo = licenseNo;
+        this.vehicle = vehicle;
+        this.registerDate = LocalDate.now();
+    }
 }

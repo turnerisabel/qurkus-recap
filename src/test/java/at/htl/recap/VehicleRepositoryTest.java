@@ -1,5 +1,6 @@
 package at.htl.recap;
 
+import at.htl.recap.control.VehicleRepository;
 import at.htl.recap.entity.Vehicle;
 import io.agroal.api.AgroalDataSource;
 import io.quarkus.test.junit.QuarkusTest;
