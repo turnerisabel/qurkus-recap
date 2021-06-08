@@ -1,0 +1,16 @@
+GET localhost:8080/api/vehicle/path/4ahitm
+
+###
+GET localhost:8080/api/vehicle/query?grade=4&name=ahitm
+
+###
+GET localhost:8080/api/vehicle/object
+
+###
+GET localhost:8080/api/vehicle/response
+
+###
+GET localhost:8080/api/vehicle/db
+
+
+

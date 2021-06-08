@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name= "V_VEHICLE")
+@Table(name = "V_VEHICLE")
 @SequenceGenerator(name = "vehicleSeq",
         sequenceName = "VEHICLE_SEQ",
         initialValue = 1000)
@@ -19,17 +19,17 @@ public class Vehicle extends PanacheEntityBase {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "vehicleSeq"
     )
-    Long id;
+    public Long id;
 
     @Column(name = "V_BRAND")
-    String brand;
+    public String brand;
 
     @Column(name = "V_MODEL")
     public
     String model;
 
     @Column(name = "V_CONSTRUCTION_YEAR")
-    int constructionYear;
+    public int constructionYear;
 
     public Vehicle() {
     }
@@ -40,7 +40,7 @@ public class Vehicle extends PanacheEntityBase {
         this.constructionYear = constructionYear;
     }
 
-    public int age(){
+    public int age() {
         return LocalDate.now().getYear() - constructionYear;
     }
 
